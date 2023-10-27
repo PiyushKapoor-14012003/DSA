@@ -192,3 +192,46 @@ void delete_before_given_node(int data)
 			printf("Not Possible");
 	}
 }
+void traverse()
+{
+	node *temp;
+	if(head==NULL)
+		printf("List is empty");
+	else
+	{
+		temp=head;
+		while(temp!=NULL)
+			{
+				printf("%d ",temp->data);
+				temp=temp->next;
+			}
+	}
+}
+/*void reverse()
+{
+	node *temp,*prev,*next;
+	if(head==NULL)
+		printf("List is empty");
+	else
+	{
+		temp=head;
+		prev=NULL;
+		while(temp!=NULL)
+		{
+			next=temp->next;
+			temp->next=prev;
+			prev=temp;
+			temp=next;
+		}
+		head=prev;
+		//traverse();
+	}
+}*/
+void print_reverse(node *temp)
+{
+	if(temp!=NULL)
+	{
+		print_reverse(temp->next);
+		printf("%d ",temp->data);
+	}
+}
