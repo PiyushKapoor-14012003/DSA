@@ -148,3 +148,47 @@ void delete_a_given_node(int data)
 
 	}
 }
+void delete_after_given_node(int data)
+{
+	node *temp,*prev;
+	if(head==NULL)
+		printf("List is empty");
+	else
+	{
+		temp=head;
+		while(temp->data!=data && temp->next!=NULL)
+			{
+				prev=temp;
+				temp=temp->next;
+			}
+		if(temp->data==data)
+		{
+			prev->next=temp->next;
+			free(temp);
+		}
+		else
+			printf("Not Possible");
+	}
+}
+void delete_before_given_node(int data)
+{
+	node *temp,*prev;
+	if(head==NULL)
+		printf("List is empty");
+	else
+	{
+		temp=head;
+		while(temp->next->data!=data && temp->next!=NULL)
+			{
+				prev=temp;
+				temp=temp->next;
+			}
+		if(temp->next->data==data)
+			{
+				prev->next=temp->next;
+				free(temp);
+			}
+		else
+			printf("Not Possible");
+	}
+}
