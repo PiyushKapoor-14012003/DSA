@@ -207,7 +207,7 @@ void traverse()
 			}
 	}
 }
-/*void reverse()
+void reverse()
 {
 	node *temp,*prev,*next;
 	if(head==NULL)
@@ -226,7 +226,7 @@ void traverse()
 		head=prev;
 		//traverse();
 	}
-}*/
+}
 void print_reverse(node *temp)
 {
 	if(temp!=NULL)
