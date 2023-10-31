@@ -235,3 +235,53 @@ void print_reverse(node *temp)
 		printf("%d ",temp->data);
 	}
 }
+void search(int data)
+{
+	node *temp;
+	int count=0;
+	if(head==NULL)
+		printf("List is empty");
+	else
+	{
+		temp=head;
+		while(temp!=NULL)
+			{
+				count++;
+				if(temp->data==data)
+					printf("Element found at %d position",count);
+				temp=temp->next;
+			}
+		if(temp==NULL)
+			printf("Element not found");
+	}
+	
+}
+void merge_linkedlist_after_a_given_node(node *temp1,node *head2,node *temp2)
+{
+	temp2=temp1->next;
+	temp1->next=head2;
+}
+void bubble_sort_linked_list(node *head)
+{
+	node *temp,*prev;
+	int swapped;
+	if(head==NULL)
+		printf("List is empty");
+	else
+	{
+		do
+			{
+				swapped=0;
+				temp=head;
+				while(temp->next!=NULL)
+					{
+						if(temp->data>temp->next->data)
+							{
+								swap(temp,temp->next);
+								swapped=1;
+							}
+						temp=temp->next;		
+					}
+			}while(swapped);
+	}
+}
